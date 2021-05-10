@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddCityViewControllerDelegate {
+    func updateCities(newCity: String)
+}
+
 class CityListTableViewController: UITableViewController {
     
     var cities: [String]!
@@ -14,10 +18,15 @@ class CityListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("cities: ", cities)
+        //print("cities: ", cities)
         
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let addCityVC = segue.destination as? AddCityViewController else { return }
+        addCityVC.delegate = self
+    }
+    
+    
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,4 +94,14 @@ class CityListTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension CityListTableViewController: AddCityViewControllerDelegate {
+    func updateCities(newCity: String) {
+        cities.append(newCity)
+        UserDefaults.standard.set(cities, forKey: "Cities")
+        tableView.reloadData()
+    }
+    
+    
 }

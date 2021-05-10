@@ -19,6 +19,7 @@
 		FA93C3F4264681DF00E37DD9 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3F3264681DF00E37DD9 /* CurrentWeather.swift */; };
 		FA93C3F82646FEBD00E37DD9 /* CityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3F72646FEBD00E37DD9 /* CityListTableViewController.swift */; };
 		FA93C3FC2647350A00E37DD9 /* CityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3FB2647350A00E37DD9 /* CityListTableViewCell.swift */; };
+		FA93C3FF2647AAAA00E37DD9 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3FE2647AAAA00E37DD9 /* AddCityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FA93C3F3264681DF00E37DD9 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		FA93C3F72646FEBD00E37DD9 /* CityListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewController.swift; sourceTree = "<group>"; };
 		FA93C3FB2647350A00E37DD9 /* CityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewCell.swift; sourceTree = "<group>"; };
+		FA93C3FE2647AAAA00E37DD9 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FA93C3C026452F2500E37DD9 /* MainViewController.swift */,
+				FA93C3FE2647AAAA00E37DD9 /* AddCityViewController.swift */,
 				FA93C3F72646FEBD00E37DD9 /* CityListTableViewController.swift */,
 				FA93C3E12645876900E37DD9 /* CityListViewController.swift */,
 			);
@@ -216,6 +219,7 @@
 				FA93C3EE2646625C00E37DD9 /* NetworkManager.swift in Sources */,
 				FA93C3C126452F2500E37DD9 /* MainViewController.swift in Sources */,
 				FA93C3BD26452F2500E37DD9 /* AppDelegate.swift in Sources */,
+				FA93C3FF2647AAAA00E37DD9 /* AddCityViewController.swift in Sources */,
 				FA93C3F4264681DF00E37DD9 /* CurrentWeather.swift in Sources */,
 				FA93C3DF264580EA00E37DD9 /* CityListCell.swift in Sources */,
 				FA93C3E22645876900E37DD9 /* CityListViewController.swift in Sources */,

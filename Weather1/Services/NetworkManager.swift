@@ -11,7 +11,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func fetchCurrentWeatherData(city: String, completion: @escaping(CurrentWeather)->()) {
+    func fetchCurrentWeatherData(city: String, completion: @escaping(Result<CurrentWeather, Error>) -> () ) {
         let urlString = "https://api.openweathermap.org/data/2.5/weather"
         let queryItems = [
             URLQueryItem(name: "q", value: city),
@@ -33,9 +33,10 @@ class NetworkManager {
             }
             do {
                 let currentWeather = try JSONDecoder().decode(CurrentWeather.self, from: data)
-                completion(currentWeather)
+                completion(.success(currentWeather))
             } catch let error {
                 print("Decode error: ",error.localizedDescription)
+                completion(.failure(error))
             }
         }.resume()
     }

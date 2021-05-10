@@ -37,6 +37,41 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9e-N8-oSi">
+                                <rect key="frame" x="338" y="378" width="60" height="140"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="DLz-jR-jHt"/>
+                                    <constraint firstAttribute="width" constant="60" id="R3k-Ch-1uX"/>
+                                </constraints>
+                                <state key="normal" image="arrowtriangle.forward" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="rightCityButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="46Q-rE-KJK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-BZ-nqi">
+                                <rect key="frame" x="16" y="378" width="60" height="140"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.097162353515624994" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6UB-V9-cd1"/>
+                                    <constraint firstAttribute="height" constant="140" id="D70-cg-2zf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="arrowtriangle.left" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="leftCityButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="01M-Lf-K7b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,8 +79,12 @@
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AwC-9I-k4X"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JAa-z3-tfh"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PAi-pC-qAc"/>
+                            <constraint firstItem="oOS-BZ-nqi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q8S-dG-tMd"/>
                             <constraint firstItem="qVd-R9-76r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RvI-Sv-1H3"/>
+                            <constraint firstItem="oOS-BZ-nqi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Uvr-DO-G9Y"/>
+                            <constraint firstItem="F9e-N8-oSi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vhc-1T-uNH"/>
                             <constraint firstItem="qVd-R9-76r" firstAttribute="top" secondItem="QR6-AK-mRB" secondAttribute="bottom" constant="10" id="WYu-Ns-HZh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F9e-N8-oSi" secondAttribute="trailing" constant="16" id="lT0-mg-cHk"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="top" secondItem="PL4-s6-j2H" secondAttribute="bottom" constant="20" id="reC-vs-caH"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y5N-3c-LYC"/>
                         </constraints>
@@ -170,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="2859" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Add City View Controller-->
         <scene sceneID="z9L-3Q-CkN">
             <objects>
-                <viewController id="cgY-PE-Wht" sceneMemberID="viewController">
+                <viewController id="cgY-PE-Wht" customClass="AddCityViewController" customModule="Weather1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NZF-xs-abJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,7 +228,13 @@
                                 <state key="normal" title="Добавить">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="AddButtonPressed" destination="cgY-PE-Wht" eventType="touchUpInside" id="SoN-WN-Nxq"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ai8-qx-syn">
+                                <rect key="frame" x="197" y="411" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sjd-IB-Dtj"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -197,11 +242,17 @@
                             <constraint firstItem="io6-zD-IGd" firstAttribute="top" secondItem="Cbi-DG-YXL" secondAttribute="bottom" constant="60" id="3S9-ck-523"/>
                             <constraint firstItem="Sjd-IB-Dtj" firstAttribute="trailing" secondItem="Cbi-DG-YXL" secondAttribute="trailing" constant="16" id="Nd5-xf-82r"/>
                             <constraint firstItem="Cbi-DG-YXL" firstAttribute="leading" secondItem="Sjd-IB-Dtj" secondAttribute="leading" constant="16" id="Q9W-JW-meJ"/>
+                            <constraint firstItem="ai8-qx-syn" firstAttribute="centerY" secondItem="NZF-xs-abJ" secondAttribute="centerY" id="cFY-T6-BbG"/>
+                            <constraint firstItem="ai8-qx-syn" firstAttribute="centerX" secondItem="NZF-xs-abJ" secondAttribute="centerX" id="iZb-v6-u9w"/>
                             <constraint firstItem="io6-zD-IGd" firstAttribute="centerX" secondItem="NZF-xs-abJ" secondAttribute="centerX" id="lWb-sj-BOJ"/>
                             <constraint firstItem="Cbi-DG-YXL" firstAttribute="top" secondItem="Sjd-IB-Dtj" secondAttribute="top" constant="16" id="r3O-YC-g2m"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g2E-St-RrL"/>
+                    <connections>
+                        <outlet property="addCityTF" destination="Cbi-DG-YXL" id="7Bs-2G-CNW"/>
+                        <outlet property="spinnerActivityIndicator" destination="ai8-qx-syn" id="RW6-uo-zrJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OX3-wf-qWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,6 +306,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowtriangle.forward" catalog="system" width="128" height="113"/>
+        <image name="arrowtriangle.left" catalog="system" width="128" height="113"/>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
