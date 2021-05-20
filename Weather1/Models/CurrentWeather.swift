@@ -11,6 +11,7 @@ struct CurrentWeather: Decodable {
     let weather: [Weather]
     let main: Main
     let name: String
+    let wind: Wind
 }
 
 struct Weather: Decodable {
@@ -26,4 +27,8 @@ struct Main: Decodable {
     let temp_max: Float
     let pressure: Int
     let humidity: Float
+}
+
+struct Wind: Decodable {
+    let speed: Double
 }

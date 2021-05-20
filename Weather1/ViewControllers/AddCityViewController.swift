@@ -21,6 +21,7 @@ class AddCityViewController: UIViewController {
     
     @IBAction func AddButtonPressed() {
         
+        //var newCityIsExist = 0
         showSpinner(show: true)
         
         guard let newCity = addCityTF.text else { return }
@@ -29,19 +30,29 @@ class AddCityViewController: UIViewController {
             switch result {
             case .success(_):
                 print("Город найден!")
+                //self.showSpinner(show: false)
+                //self.delegate.updateCities(newCity: newCity)
+                //_ = self.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async {
+                    //newCityIsExist = 1
+                    self.delegate.updateCities(newCity: newCity)
+                    self.showSpinner(show: false)
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+                
             case .failure(_):
                 print("Город не найден!")
                 DispatchQueue.main.async {
                     self.showAlert(with: "Город не найден!", and: "Попробуйте написать название по другому.")
+                    self.showSpinner(show: false)
                 }
             }
         }
-        showSpinner(show: false)
+        //showSpinner(show: false)
         
         
-        delegate.updateCities(newCity: newCity)
-        
-        _ = navigationController?.popViewController(animated: true)
+        //delegate.updateCities(newCity: newCity)
+
         
     }
     
@@ -69,3 +80,16 @@ extension AddCityViewController {
         present(alert, animated: true)
     }
 }
+
+//extension AddCityViewController {
+//    // Вызывается перед скрытием вью
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        print("viewWillDisappear")
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        print("viewDidDisappear")
+//    }
+//}

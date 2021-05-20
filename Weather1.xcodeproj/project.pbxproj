@@ -20,6 +20,9 @@
 		FA93C3F82646FEBD00E37DD9 /* CityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3F72646FEBD00E37DD9 /* CityListTableViewController.swift */; };
 		FA93C3FC2647350A00E37DD9 /* CityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3FB2647350A00E37DD9 /* CityListTableViewCell.swift */; };
 		FA93C3FF2647AAAA00E37DD9 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C3FE2647AAAA00E37DD9 /* AddCityViewController.swift */; };
+		FA93C4032649152F00E37DD9 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C4022649152F00E37DD9 /* StorageManager.swift */; };
+		FA93C4062649578C00E37DD9 /* Forecast5days.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C4052649578C00E37DD9 /* Forecast5days.swift */; };
+		FAD2BFAD2656A391007B3CAA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2BFAC2656A391007B3CAA /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		FA93C3F72646FEBD00E37DD9 /* CityListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewController.swift; sourceTree = "<group>"; };
 		FA93C3FB2647350A00E37DD9 /* CityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewCell.swift; sourceTree = "<group>"; };
 		FA93C3FE2647AAAA00E37DD9 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
+		FA93C4022649152F00E37DD9 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FA93C4052649578C00E37DD9 /* Forecast5days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5days.swift; sourceTree = "<group>"; };
+		FAD2BFAC2656A391007B3CAA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				FA93C3ED2646625C00E37DD9 /* NetworkManager.swift */,
+				FA93C4022649152F00E37DD9 /* StorageManager.swift */,
+				FAD2BFAC2656A391007B3CAA /* APIKey.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FA93C3F3264681DF00E37DD9 /* CurrentWeather.swift */,
+				FA93C4052649578C00E37DD9 /* Forecast5days.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +225,8 @@
 			files = (
 				FA93C3F82646FEBD00E37DD9 /* CityListTableViewController.swift in Sources */,
 				FA93C3FC2647350A00E37DD9 /* CityListTableViewCell.swift in Sources */,
+				FA93C4032649152F00E37DD9 /* StorageManager.swift in Sources */,
+				FA93C4062649578C00E37DD9 /* Forecast5days.swift in Sources */,
 				FA93C3EE2646625C00E37DD9 /* NetworkManager.swift in Sources */,
 				FA93C3C126452F2500E37DD9 /* MainViewController.swift in Sources */,
 				FA93C3BD26452F2500E37DD9 /* AppDelegate.swift in Sources */,
@@ -223,6 +234,7 @@
 				FA93C3F4264681DF00E37DD9 /* CurrentWeather.swift in Sources */,
 				FA93C3DF264580EA00E37DD9 /* CityListCell.swift in Sources */,
 				FA93C3E22645876900E37DD9 /* CityListViewController.swift in Sources */,
+				FAD2BFAD2656A391007B3CAA /* APIKey.swift in Sources */,
 				FA93C3BF26452F2500E37DD9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
