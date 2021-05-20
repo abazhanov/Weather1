@@ -47,4 +47,4 @@ DerivedData/\
 \
 # End of https://www.toptal.com/developers/gitignore/api/xcode\
 \
-Services/APIKey.swift}
+!Services/APIKey.swift}
