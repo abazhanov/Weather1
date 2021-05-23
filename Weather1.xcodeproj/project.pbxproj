@@ -23,6 +23,7 @@
 		FA93C4032649152F00E37DD9 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C4022649152F00E37DD9 /* StorageManager.swift */; };
 		FA93C4062649578C00E37DD9 /* Forecast5days.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C4052649578C00E37DD9 /* Forecast5days.swift */; };
 		FAD2BFAD2656A391007B3CAA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2BFAC2656A391007B3CAA /* APIKey.swift */; };
+		FAD2BFB2265909D9007B3CAA /* Forecast16Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2BFB1265909D9007B3CAA /* Forecast16Days.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FA93C4022649152F00E37DD9 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		FA93C4052649578C00E37DD9 /* Forecast5days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5days.swift; sourceTree = "<group>"; };
 		FAD2BFAC2656A391007B3CAA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		FAD2BFB1265909D9007B3CAA /* Forecast16Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast16Days.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				FA93C3F3264681DF00E37DD9 /* CurrentWeather.swift */,
+				FAD2BFB1265909D9007B3CAA /* Forecast16Days.swift */,
 				FA93C4052649578C00E37DD9 /* Forecast5days.swift */,
 			);
 			path = Models;
@@ -233,6 +236,7 @@
 				FA93C3FF2647AAAA00E37DD9 /* AddCityViewController.swift in Sources */,
 				FA93C3F4264681DF00E37DD9 /* CurrentWeather.swift in Sources */,
 				FA93C3DF264580EA00E37DD9 /* CityListCell.swift in Sources */,
+				FAD2BFB2265909D9007B3CAA /* Forecast16Days.swift in Sources */,
 				FA93C3E22645876900E37DD9 /* CityListViewController.swift in Sources */,
 				FAD2BFAD2656A391007B3CAA /* APIKey.swift in Sources */,
 				FA93C3BF26452F2500E37DD9 /* SceneDelegate.swift in Sources */,
@@ -389,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ArtemBazhanov.Weather1;
+				PRODUCT_BUNDLE_IDENTIFIER = ArtemBazhanov.WildWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -408,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ArtemBazhanov.Weather1;
+				PRODUCT_BUNDLE_IDENTIFIER = ArtemBazhanov.WildWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

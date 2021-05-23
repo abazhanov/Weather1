@@ -35,21 +35,38 @@ class MainViewController: UIViewController {
     @IBOutlet weak var forecast5DayUIImageView5: UIImageView!
     @IBOutlet weak var forecast5DaysLabel5: UILabel!
     
+    @IBOutlet weak var forecast5DaysNameLabel1: UILabel!
+    @IBOutlet weak var forecast5DaysNameLabel2: UILabel!
+    @IBOutlet weak var forecast5DaysNameLabel3: UILabel!
+    @IBOutlet weak var forecast5DaysNameLabel4: UILabel!
+    @IBOutlet weak var forecast5DaysNameLabel5: UILabel!
+    
+    
     var cities: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         cities = StorageManager.shared.getCities()
         
-        print(cities)
-        //Нужно добавить реализацию экрана при отсутствии сохраненных гороов
+        print("cities: ", cities)
+     
+        if cities == [] {
+            cities.append("Нижний Новгород")
+            StorageManager.shared.addCity(city: "Нижний Новгород")
+        }
         showCurrentWeather(for: cities.first ?? "Москва")
         print()
         print()
         print()
         print()
         print()
-        showForecast5Days(for: cities.first ?? "Москва")
+        //showForecast5Days(for: cities.first ?? "Москва")
+        print()
+        print()
+        print()
+        print()
+        print()
+        showForecast16Days(for: cities.first ?? "Москва")
         
         
         //Вот тут тренировка
@@ -86,7 +103,7 @@ class MainViewController: UIViewController {
         }
         
         showCurrentWeather(for: cities[leftIndexOfCity])
-        showForecast5Days(for: cities[leftIndexOfCity])
+        showForecast16Days(for: cities[leftIndexOfCity])
     }
     
     @IBAction func rightCityButtonPressed() {
@@ -107,7 +124,7 @@ class MainViewController: UIViewController {
         }
         
         showCurrentWeather(for: cities[rightIndexOfCity])
-        showForecast5Days(for: cities[rightIndexOfCity])
+        showForecast16Days(for: cities[rightIndexOfCity])
     }
     
     
@@ -126,6 +143,8 @@ class MainViewController: UIViewController {
 //        let cities = UserDefaults.standard.stringArray(forKey: "Cities")
 //        return cities ?? ["Нижний Новгород"]
 //    }
+    
+    
     //MARK: Curren weather
     private func showCurrentWeather(for city: String) {
         NetworkManager.shared.fetchCurrentWeatherData(city: city) { (result) in
@@ -136,7 +155,7 @@ class MainViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.title = currentWeather.name
                     self.currentWeatherDescriptionLabel.text = currentWeather.weather[0].description
-                    self.currentWeatherTempLabel.text = String(currentWeather.main.temp) + " ºC"
+                    self.currentWeatherTempLabel.text = String(lroundf(currentWeather.main.temp)) + " ºC"
                     
                     self.currentPressureLabel.text = String(currentWeather.main.pressure) + " мм рт. ст."
                     self.currentHumidityLabel.text = String(currentWeather.main.humidity) + " %"
@@ -164,7 +183,7 @@ class MainViewController: UIViewController {
                 print(forecast5Days)
                 DispatchQueue.main.async {
                     
-                    self.forecast5DaysLabel1.text = String(forecast5Days.list[0].main.temp)
+                    self.forecast5DaysLabel1.text = String(lroundf(forecast5Days.list[0].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[0].weather[0].icon) { (data) in
                         print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
@@ -173,7 +192,7 @@ class MainViewController: UIViewController {
                         }
                     }
                     
-                    self.forecast5DaysLabel2.text = String(forecast5Days.list[1].main.temp)
+                    self.forecast5DaysLabel2.text = String(lroundf(forecast5Days.list[1].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[1].weather[0].icon) { (data) in
                         print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
@@ -182,7 +201,7 @@ class MainViewController: UIViewController {
                         }
                     }
                     
-                    self.forecast5DaysLabel3.text = String(forecast5Days.list[2].main.temp)
+                    self.forecast5DaysLabel3.text = String(lroundf(forecast5Days.list[2].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[2].weather[0].icon) { (data) in
                         print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
@@ -191,7 +210,7 @@ class MainViewController: UIViewController {
                         }
                     }
                     
-                    self.forecast5DaysLabel4.text = String(forecast5Days.list[3].main.temp)
+                    self.forecast5DaysLabel4.text = String(lroundf(forecast5Days.list[3].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[3].weather[0].icon) { (data) in
                         print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
@@ -200,7 +219,7 @@ class MainViewController: UIViewController {
                         }
                     }
                     
-                    self.forecast5DaysLabel5.text = String(forecast5Days.list[4].main.temp)
+                    self.forecast5DaysLabel5.text = String(lroundf(forecast5Days.list[4].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[4].weather[0].icon) { (data) in
                         print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
@@ -216,19 +235,74 @@ class MainViewController: UIViewController {
         }
     }
     
-//    private func getIcon(url: String) -> UIImage {
-//
-//        NetworkManager.shared.fetchIconWeatherData(partURL: url) { (data) in
-//            print("Data icon", data)
-//            guard let image = UIImage(data: data) else { return }
-//            DispatchQueue.main.async {
-//                return image
-//            }
-//        }
-//
-//        return
-//    }
-
+    //MARK: Forecast 16 days
+    private func showForecast16Days(for city: String) {
+        NetworkManager.shared.fetchForecst16DaysData(city: city) { (result) in
+            switch result {
+            case .success(let forecast16Days):
+                //print("forecast16Days:", forecast16Days)
+                DispatchQueue.main.async {
+                    
+                    self.forecast5DaysLabel1.text = String(lroundf(forecast16Days.list[0].temp.day)) + " ºC"
+                    self.forecast5DaysNameLabel1.text = String(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: Double(forecast16Days.list[0].dt))))
+                    NetworkManager.shared.fetchIconWeatherData(partURL: forecast16Days.list[0].weather[0].icon) { (data) in
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.forecast5DaysUIImageView1.image = image
+                        }
+                    }
+                    
+                    self.forecast5DaysLabel2.text = String(lroundf(forecast16Days.list[1].temp.day)) + " ºC"
+                    self.forecast5DaysNameLabel2.text = String(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: Double(forecast16Days.list[1].dt))))
+                    NetworkManager.shared.fetchIconWeatherData(partURL: forecast16Days.list[1].weather[0].icon) { (data) in
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.forecast5DayUIImageView2.image = image
+                        }
+                    }
+                    
+                    self.forecast5DaysLabel3.text = String(lroundf(forecast16Days.list[2].temp.day)) + " ºC"
+                    self.forecast5DaysNameLabel3.text = String(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: Double(forecast16Days.list[2].dt))))
+                    NetworkManager.shared.fetchIconWeatherData(partURL: forecast16Days.list[2].weather[0].icon) { (data) in
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.forecast5DayUIImageView3.image = image
+                        }
+                    }
+                    
+                    self.forecast5DaysLabel4.text = String(lroundf(forecast16Days.list[3].temp.day)) + " ºC"
+                    self.forecast5DaysNameLabel4.text = String(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: Double(forecast16Days.list[3].dt))))
+                    NetworkManager.shared.fetchIconWeatherData(partURL: forecast16Days.list[3].weather[0].icon) { (data) in
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.forecast5DayUIImageView4.image = image
+                        }
+                    }
+                    
+                    self.forecast5DaysLabel5.text = String(lroundf(forecast16Days.list[4].temp.day)) + " ºC"
+                    self.forecast5DaysNameLabel5.text = String(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: Double(forecast16Days.list[4].dt))))
+                    NetworkManager.shared.fetchIconWeatherData(partURL: forecast16Days.list[4].weather[0].icon) { (data) in
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            self.forecast5DayUIImageView5.image = image
+                        }
+                    }
+                    
+                }
+            case .failure(let error):
+                print("forecast16Days error: ", error)
+            }
+        }
+    }
+    
+    private func dayOfWeek(dateTime: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM"
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        return dateFormatter.string(from: dateTime).capitalized
+        // or use capitalized(with: locale) if you want
+    }
+    
 }
 
 extension MainViewController: CityListTableViewControllerDelegate {
