@@ -241,6 +241,14 @@
                                     <action selector="rightCityButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="46Q-rE-KJK"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-ek-zD1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2IY-rr-Pwt" appends="YES" id="oLw-Qe-Dw7"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -248,20 +256,24 @@
                             <constraint firstItem="oOS-BZ-nqi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0gK-7K-q0g"/>
                             <constraint firstItem="opl-IT-PCM" firstAttribute="top" secondItem="qVd-R9-76r" secondAttribute="bottom" constant="20" id="1bv-la-haH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F9e-N8-oSi" secondAttribute="trailing" constant="16" id="23M-T0-WdK"/>
+                            <constraint firstAttribute="bottom" secondItem="9wH-ek-zD1" secondAttribute="bottom" id="308-V7-tDx"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AwC-9I-k4X"/>
                             <constraint firstItem="oOS-BZ-nqi" firstAttribute="top" secondItem="opl-IT-PCM" secondAttribute="bottom" constant="16" id="BcR-K2-dJc"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JAa-z3-tfh"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PAi-pC-qAc"/>
                             <constraint firstItem="sdK-BG-yEK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Psr-L1-ZfX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9wH-ek-zD1" secondAttribute="trailing" id="QB2-4a-EJG"/>
                             <constraint firstItem="qVd-R9-76r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RvI-Sv-1H3"/>
                             <constraint firstItem="qVd-R9-76r" firstAttribute="top" secondItem="QR6-AK-mRB" secondAttribute="bottom" constant="10" id="WYu-Ns-HZh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="opl-IT-PCM" secondAttribute="trailing" constant="16" id="Wvj-Wk-1W7"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="top" secondItem="PL4-s6-j2H" secondAttribute="bottom" constant="20" id="reC-vs-caH"/>
                             <constraint firstItem="opl-IT-PCM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tUL-pY-pF0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdK-BG-yEK" secondAttribute="trailing" constant="16" id="udV-HQ-Nq1"/>
+                            <constraint firstItem="9wH-ek-zD1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uvx-33-Bo1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sdK-BG-yEK" secondAttribute="bottom" constant="50" id="wQp-hU-XSW"/>
                             <constraint firstItem="F9e-N8-oSi" firstAttribute="top" secondItem="opl-IT-PCM" secondAttribute="bottom" constant="16" id="wdd-iF-HtQ"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y5N-3c-LYC"/>
+                            <constraint firstItem="9wH-ek-zD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zjm-r4-VmY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Добавьте город" id="Ab5-iR-XSC">
@@ -300,6 +312,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2IY-rr-Pwt">
+                    <connections>
+                        <action selector="handlePanWithRecognizer:" destination="BYZ-38-t0r" id="JgW-17-WZz"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="114.50892857142857"/>
         </scene>

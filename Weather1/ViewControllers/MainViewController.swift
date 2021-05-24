@@ -89,13 +89,13 @@ class MainViewController: UIViewController {
         let currentCity = title
         var indexOfCity = 0
         var leftIndexOfCity: Int
-        print("cities.count", cities.count)
+        //print("cities.count", cities.count)
         for index in 0...cities.count - 1 {
             if cities[index] == currentCity {
                 indexOfCity = index
             }
         }
-        print("index: ", indexOfCity)
+        //print("index: ", indexOfCity)
         if indexOfCity == 0 {
             leftIndexOfCity = cities.count - 1
         } else {
@@ -110,13 +110,13 @@ class MainViewController: UIViewController {
         let currentCity = title
         var indexOfCity = 0
         var rightIndexOfCity: Int
-        print("cities.count", cities.count)
+        //print("cities.count", cities.count)
         for index in 0...cities.count - 1 {
             if cities[index] == currentCity {
                 indexOfCity = index
             }
         }
-        print("index: ", indexOfCity)
+        //print("index: ", indexOfCity)
         if indexOfCity == cities.count - 1 {
             rightIndexOfCity = 0
         } else {
@@ -150,7 +150,7 @@ class MainViewController: UIViewController {
         NetworkManager.shared.fetchCurrentWeatherData(city: city) { (result) in
             switch result {
             case .success(let currentWeather):
-                print(currentWeather.weather[0].icon)
+                //print(currentWeather.weather[0].icon)
                 
                 DispatchQueue.main.async {
                     self.title = currentWeather.name
@@ -163,7 +163,7 @@ class MainViewController: UIViewController {
                 }
                 
                 NetworkManager.shared.fetchIconWeatherData(partURL: currentWeather.weather[0].icon) { (data) in
-                    print("Data icon", data)
+                    //print("Data icon", data)
                     let image = UIImage(data: data)
                     DispatchQueue.main.async {
                         self.currentWeatherIconUIView.image = image
@@ -180,12 +180,12 @@ class MainViewController: UIViewController {
         NetworkManager.shared.fetchForecst5DaysData(city: city) { (result) in
             switch result {
             case .success(let forecast5Days):
-                print(forecast5Days)
+                //print(forecast5Days)
                 DispatchQueue.main.async {
                     
                     self.forecast5DaysLabel1.text = String(lroundf(forecast5Days.list[0].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[0].weather[0].icon) { (data) in
-                        print("!!!!!!!Data icon", data)
+                        //print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
                         DispatchQueue.main.async {
                             self.forecast5DaysUIImageView1.image = image
@@ -194,7 +194,7 @@ class MainViewController: UIViewController {
                     
                     self.forecast5DaysLabel2.text = String(lroundf(forecast5Days.list[1].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[1].weather[0].icon) { (data) in
-                        print("!!!!!!!Data icon", data)
+                        //print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
                         DispatchQueue.main.async {
                             self.forecast5DayUIImageView2.image = image
@@ -203,7 +203,7 @@ class MainViewController: UIViewController {
                     
                     self.forecast5DaysLabel3.text = String(lroundf(forecast5Days.list[2].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[2].weather[0].icon) { (data) in
-                        print("!!!!!!!Data icon", data)
+                        //print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
                         DispatchQueue.main.async {
                             self.forecast5DayUIImageView3.image = image
@@ -212,7 +212,7 @@ class MainViewController: UIViewController {
                     
                     self.forecast5DaysLabel4.text = String(lroundf(forecast5Days.list[3].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[3].weather[0].icon) { (data) in
-                        print("!!!!!!!Data icon", data)
+                        //print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
                         DispatchQueue.main.async {
                             self.forecast5DayUIImageView4.image = image
@@ -221,7 +221,7 @@ class MainViewController: UIViewController {
                     
                     self.forecast5DaysLabel5.text = String(lroundf(forecast5Days.list[4].main.temp)) + " ºC"
                     NetworkManager.shared.fetchIconWeatherData(partURL: forecast5Days.list[4].weather[0].icon) { (data) in
-                        print("!!!!!!!Data icon", data)
+                        //print("!!!!!!!Data icon", data)
                         let image = UIImage(data: data)
                         DispatchQueue.main.async {
                             self.forecast5DayUIImageView5.image = image
@@ -301,6 +301,24 @@ class MainViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "ru_RU")
         return dateFormatter.string(from: dateTime).capitalized
         // or use capitalized(with: locale) if you want
+    }
+    
+    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: view)
+        if let view = recognizer.view {
+            print("Значение свайпа", translation.x)
+            print("Значение state", recognizer.state)
+            if recognizer.state == UIGestureRecognizer.State.ended {
+                print("UIGestureRecognizer.State.ended")
+                if translation.x > 0 {
+                    rightCityButtonPressed()
+                } else {
+                    leftCityButtonPressed()
+                }
+            }
+        } else {
+            print("ЧТО-ТО ПОШЛО НЕ ТАК!")
+        }
     }
     
 }

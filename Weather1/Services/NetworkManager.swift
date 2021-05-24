@@ -45,7 +45,7 @@ class NetworkManager {
     func fetchIconWeatherData(partURL: String, completion: @escaping(Data)->()) {
              
         guard let url = URL(string: "http://openweathermap.org/img/wn/\(partURL)@4x.png") else {return}
-        print("URL = \(url)")
+        //print("URL = \(url)")
         let session = URLSession.shared
     
         session.dataTask(with: url) { (data, response, error) in
@@ -112,21 +112,21 @@ class NetworkManager {
             do {
                 let forecast16days = try JSONDecoder().decode(Forecast16Days.self, from: data)
                 var dt = Double(forecast16days.list[0].dt)
-                print(NSDate(timeIntervalSince1970: dt))
+                //print(NSDate(timeIntervalSince1970: dt))
                 dt = Double(forecast16days.list[1].dt)
-                print(NSDate(timeIntervalSince1970: dt))
+                //print(NSDate(timeIntervalSince1970: dt))
                 dt = Double(forecast16days.list[2].dt)
-                print(NSDate(timeIntervalSince1970: dt))
+                //print(NSDate(timeIntervalSince1970: dt))
                 dt = Double(forecast16days.list[3].dt)
-                print(NSDate(timeIntervalSince1970: dt))
+                //print(NSDate(timeIntervalSince1970: dt))
                 dt = Double(forecast16days.list[4].dt)
-                print(NSDate(timeIntervalSince1970: dt))
+                //print(NSDate(timeIntervalSince1970: dt))
                 
                 DispatchQueue.main.async {
-                    print("aaaaa")
+                    //print("aaaaa")
                     //let newDT = Date(timeIntervalSince1970: dt)
                     
-                    print(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: dt)))
+                    //print(self.dayOfWeek(dateTime: Date(timeIntervalSince1970: dt)))
                 }
                 
                 completion(.success(forecast16days))
