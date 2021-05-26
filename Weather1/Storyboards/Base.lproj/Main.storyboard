@@ -37,32 +37,13 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOS-BZ-nqi">
-                                <rect key="frame" x="20" y="560" width="60" height="140"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="crC-Sz-lJD"/>
-                                    <constraint firstAttribute="width" constant="60" id="s6O-i5-IjT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="tintColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="arrowtriangle.left" catalog="system"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="leftCityButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="01M-Lf-K7b"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="opl-IT-PCM">
                                 <rect key="frame" x="16" y="416" width="382" height="128"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="nOk-fZ-Rne">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="128"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="nZg-dp-JOT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfinder_Thermometer_6802270 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="nZg-dp-JOT">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9u-pr-xV6">
@@ -223,24 +204,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9e-N8-oSi">
-                                <rect key="frame" x="338" y="560" width="60" height="140"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Da0-2d-sRf"/>
-                                    <constraint firstAttribute="height" constant="140" id="TZJ-qE-PjB"/>
-                                </constraints>
-                                <color key="tintColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="arrowtriangle.forward" catalog="system"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="rightCityButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="46Q-rE-KJK"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-ek-zD1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -253,12 +216,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oOS-BZ-nqi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0gK-7K-q0g"/>
                             <constraint firstItem="opl-IT-PCM" firstAttribute="top" secondItem="qVd-R9-76r" secondAttribute="bottom" constant="20" id="1bv-la-haH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F9e-N8-oSi" secondAttribute="trailing" constant="16" id="23M-T0-WdK"/>
                             <constraint firstAttribute="bottom" secondItem="9wH-ek-zD1" secondAttribute="bottom" id="308-V7-tDx"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AwC-9I-k4X"/>
-                            <constraint firstItem="oOS-BZ-nqi" firstAttribute="top" secondItem="opl-IT-PCM" secondAttribute="bottom" constant="16" id="BcR-K2-dJc"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JAa-z3-tfh"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PAi-pC-qAc"/>
                             <constraint firstItem="sdK-BG-yEK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Psr-L1-ZfX"/>
@@ -271,7 +231,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdK-BG-yEK" secondAttribute="trailing" constant="16" id="udV-HQ-Nq1"/>
                             <constraint firstItem="9wH-ek-zD1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uvx-33-Bo1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sdK-BG-yEK" secondAttribute="bottom" constant="50" id="wQp-hU-XSW"/>
-                            <constraint firstItem="F9e-N8-oSi" firstAttribute="top" secondItem="opl-IT-PCM" secondAttribute="bottom" constant="16" id="wdd-iF-HtQ"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y5N-3c-LYC"/>
                             <constraint firstItem="9wH-ek-zD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zjm-r4-VmY"/>
                         </constraints>
@@ -385,7 +344,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="8y5-r8-mZC" style="IBUITableViewCellStyleDefault" id="ddC-sK-KqW" customClass="CityListTableViewCell" customModule="Weather1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="8y5-r8-mZC" style="IBUITableViewCellStyleDefault" id="ddC-sK-KqW" customClass="CityListTableViewCell" customModule="Weather1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ddC-sK-KqW" id="Ne2-w5-rBO">
@@ -404,6 +363,7 @@
                                     <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -413,6 +373,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Города" id="fFT-QL-Njk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d1n-bi-4Vo">
+                            <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="cgY-PE-Wht" kind="show" id="moI-WZ-pL1"/>
                             </connections>
@@ -507,6 +468,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -520,10 +482,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.forward" catalog="system" width="128" height="113"/>
-        <image name="arrowtriangle.left" catalog="system" width="128" height="113"/>
         <image name="humidity" width="128" height="128"/>
-        <image name="pressure" width="128" height="128"/>
+        <image name="iconfinder_Thermometer_6802270 (1)" width="128" height="128"/>
         <image name="wind" width="128" height="128"/>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
