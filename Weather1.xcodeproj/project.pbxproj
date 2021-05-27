@@ -24,6 +24,7 @@
 		FA93C4062649578C00E37DD9 /* Forecast5days.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93C4052649578C00E37DD9 /* Forecast5days.swift */; };
 		FAD2BFAD2656A391007B3CAA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2BFAC2656A391007B3CAA /* APIKey.swift */; };
 		FAD2BFB2265909D9007B3CAA /* Forecast16Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2BFB1265909D9007B3CAA /* Forecast16Days.swift */; };
+		FAD2BFC026602A4C007B3CAA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2BFBF26602A4C007B3CAA /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FA93C4052649578C00E37DD9 /* Forecast5days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5days.swift; sourceTree = "<group>"; };
 		FAD2BFAC2656A391007B3CAA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		FAD2BFB1265909D9007B3CAA /* Forecast16Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast16Days.swift; sourceTree = "<group>"; };
+		FAD2BFBF26602A4C007B3CAA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				FA93C3FE2647AAAA00E37DD9 /* AddCityViewController.swift */,
 				FA93C3F72646FEBD00E37DD9 /* CityListTableViewController.swift */,
 				FA93C3E12645876900E37DD9 /* CityListViewController.swift */,
+				FAD2BFBF26602A4C007B3CAA /* PageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				FA93C4062649578C00E37DD9 /* Forecast5days.swift in Sources */,
 				FA93C3EE2646625C00E37DD9 /* NetworkManager.swift in Sources */,
 				FA93C3C126452F2500E37DD9 /* MainViewController.swift in Sources */,
+				FAD2BFC026602A4C007B3CAA /* PageViewController.swift in Sources */,
 				FA93C3BD26452F2500E37DD9 /* AppDelegate.swift in Sources */,
 				FA93C3FF2647AAAA00E37DD9 /* AddCityViewController.swift in Sources */,
 				FA93C3F4264681DF00E37DD9 /* CurrentWeather.swift in Sources */,
