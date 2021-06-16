@@ -37,7 +37,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
 
     func returnPageViewController(for index: Int) -> MainViewController? {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "mainVC") as! MainViewController
+        let navVC = storyboard?.instantiateViewController(withIdentifier: "navVC") as! UINavigationController
+        let vc = navVC.topViewController as! MainViewController
         print("VC = ", vc)
         return vc
     }

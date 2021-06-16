@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZBH-d6-cIX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a5U-21-BVW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -278,7 +278,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1952.1739130434785" y="114.50892857142857"/>
         </scene>
         <!--City List View Controller-->
         <scene sceneID="bbq-sf-JpS">
@@ -383,7 +383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYZ-7D-Ye3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2859" y="115"/>
+            <point key="canvasLocation" x="3768.115942028986" y="114.50892857142857"/>
         </scene>
         <!--Add City View Controller-->
         <scene sceneID="z9L-3Q-CkN">
@@ -432,12 +432,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OX3-wf-qWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3664" y="115"/>
+            <point key="canvasLocation" x="4573.913043478261" y="114.50892857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Jj-j2-Kgw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EAF-c2-mBk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navVC" automaticallyAdjustsScrollViewInsets="NO" id="EAF-c2-mBk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Dh-PX-Rj0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -458,7 +458,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJE-HK-WGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="114.50892857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iHH-vN-QzG">
@@ -479,17 +479,46 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fA7-3n-hOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="115"/>
+            <point key="canvasLocation" x="2847.826086956522" y="114.50892857142857"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="7Wg-Wb-A8f">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZBH-d6-cIX" customClass="PageViewController" customModule="Weather1" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZBH-d6-cIX" customClass="PageViewController" customModule="Weather1" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LQP-pd-THt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ZJM-Pf-l7t">
+                            <connections>
+                                <segue destination="B6M-lf-861" kind="presentation" id="Xpa-QV-q3U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBX-pn-3Pk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-807" y="115"/>
+            <point key="canvasLocation" x="102.89855072463769" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mUv-PY-4yv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5U-21-BVW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R7R-n3-Bpr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZBH-d6-cIX" kind="relationship" relationship="rootViewController" id="RU5-5i-Jd8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9T-Qq-F3h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-807.24637681159425" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xpa-QV-q3U"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="humidity" width="128" height="128"/>
         <image name="iconfinder_Thermometer_6802270 (1)" width="128" height="128"/>
