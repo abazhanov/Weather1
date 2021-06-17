@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol CityListTableViewControllerDelegate {
-    func updateCities(cities: [String])
-}
+//protocol CityListTableViewControllerDelegate {
+//    func updateCities(cities: [String])
+//}
 
 class MainViewController: UIViewController {
     
@@ -43,30 +43,35 @@ class MainViewController: UIViewController {
     
     
     var cities: [String] = []
+    
+    var citiesFromPageView: String!
+    var index: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        cities = StorageManager.shared.getCities()
+        print("Main - город: \(citiesFromPageView)")
+//        title = citiesFromPageView
+//        cities = StorageManager.shared.getCities()
         
-        print("cities: ", cities)
+        //print("cities: ", cities)
      
-        if cities == [] {
-            cities.append("Нижний Новгород")
-            StorageManager.shared.addCity(city: "Нижний Новгород")
-        }
-        showCurrentWeather(for: cities.first ?? "Москва")
-        print()
-        print()
-        print()
-        print()
-        print()
-        //showForecast5Days(for: cities.first ?? "Москва")
-        print()
-        print()
-        print()
-        print()
-        print()
-        showForecast16Days(for: cities.first ?? "Москва")
+//        if cities == [] {
+//            cities.append("Нижний Новгород")
+//            StorageManager.shared.addCity(city: "Нижний Новгород")
+//        }
+        showCurrentWeather(for: citiesFromPageView)
+//        print()
+//        print()
+//        print()
+//        print()
+//        print()
+//        //showForecast5Days(for: cities.first ?? "Москва")
+//        print()
+//        print()
+//        print()
+//        print()
+//        print()
+        showForecast16Days(for: citiesFromPageView)
         
         
         //Вот тут тренировка
@@ -134,8 +139,7 @@ class MainViewController: UIViewController {
         guard let navBarVC = segue.destination as? UINavigationController else { return }
         let cityListVC = navBarVC.topViewController as! CityListTableViewController
         cityListVC.cities = cities
-        cityListVC.delegate = self
-        
+        //cityListVC.delegate = self
     }
     
 //    private func getCities() -> [String] {
@@ -323,11 +327,11 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: CityListTableViewControllerDelegate {
-    func updateCities(cities: [String]) {
-        self.cities = StorageManager.shared.getCities()
-       print("self.cities: ", self.cities)
-    }
-    
-    
-}
+//extension MainViewController: CityListTableViewControllerDelegate {
+//    func updateCities(cities: [String]) {
+//        self.cities = StorageManager.shared.getCities()
+//       print("self.cities: ", self.cities)
+//    }
+//    
+//    
+//}
