@@ -54,7 +54,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = ((viewController as? MainViewController)?.index ?? 0)
+        //var index = ((viewController as? MainViewController)?.index ?? 0)
+        var index = ((viewController as! MainViewController).PageControl.currentPage)
         print("index Before = \(index)")
         index -= 1
         print("index Before = \(index)")
@@ -63,7 +64,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = ((viewController as? MainViewController)?.index ?? 0)
+        var index = ((viewController as? MainViewController)?.indexOfCurrentCity ?? 0)
         print("index After = \(index)")
         index += 1
         print("index After = \(index)")
@@ -71,6 +72,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     }
 
     func returnPageViewController(for index: Int) -> MainViewController? {
+        print("")
+        print("returnPageViewController")
         if index < 0 {
             print("Индекс меньше нуля")
             return nil
@@ -85,10 +88,15 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         let vc = navVC.topViewController as! MainViewController
         //print("VC = ", vc)
         print("index = \(index)")
+        
         vc.citiesFromPageView = cities[index]
         print("vc.citiesFromPageView = \(cities[index])")
-        vc.index = index
+        
+        vc.indexOfCurrentCity = index
         print("vc.index = \(index)")
+        
+        vc.numberOfCities = cities.count
+        
         title = cities[index]
         return vc
     }
@@ -100,6 +108,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 extension PageViewController: CityListTableViewControllerDelegate {
     func updateCities(cities: [String]) {
         self.cities = StorageManager.shared.getCities()
+        
+        
+        if let vc = returnPageViewController(for: currentCityIndex) {
+                setViewControllers([vc], direction: .forward, animated: false, completion: nil)
+            print("currentCityIndex Init = \(currentCityIndex)")
+        }
+        
        print("self.cities: ", self.cities)
     }
     

@@ -86,7 +86,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="sdK-BG-yEK">
-                                <rect key="frame" x="16" y="705" width="382" height="107"/>
+                                <rect key="frame" x="16" y="715" width="382" height="107"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1WJ-O9-3rX">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="107"/>
@@ -205,35 +205,30 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-ek-zD1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="2IY-rr-Pwt" appends="YES" id="oLw-Qe-Dw7"/>
-                                </connections>
-                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-Cs-IfR">
+                                <rect key="frame" x="146.5" y="824.5" width="121.5" height="27.5"/>
+                                <color key="pageIndicatorTintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="opl-IT-PCM" firstAttribute="top" secondItem="qVd-R9-76r" secondAttribute="bottom" constant="20" id="1bv-la-haH"/>
-                            <constraint firstAttribute="bottom" secondItem="9wH-ek-zD1" secondAttribute="bottom" id="308-V7-tDx"/>
+                            <constraint firstItem="Yd9-Cs-IfR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4qg-Qd-KcT"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AwC-9I-k4X"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JAa-z3-tfh"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PAi-pC-qAc"/>
                             <constraint firstItem="sdK-BG-yEK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Psr-L1-ZfX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9wH-ek-zD1" secondAttribute="trailing" id="QB2-4a-EJG"/>
                             <constraint firstItem="qVd-R9-76r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RvI-Sv-1H3"/>
                             <constraint firstItem="qVd-R9-76r" firstAttribute="top" secondItem="QR6-AK-mRB" secondAttribute="bottom" constant="10" id="WYu-Ns-HZh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="opl-IT-PCM" secondAttribute="trailing" constant="16" id="Wvj-Wk-1W7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yd9-Cs-IfR" secondAttribute="bottom" constant="10" id="qae-qr-rgZ"/>
                             <constraint firstItem="QR6-AK-mRB" firstAttribute="top" secondItem="PL4-s6-j2H" secondAttribute="bottom" constant="20" id="reC-vs-caH"/>
                             <constraint firstItem="opl-IT-PCM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tUL-pY-pF0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sdK-BG-yEK" secondAttribute="trailing" constant="16" id="udV-HQ-Nq1"/>
-                            <constraint firstItem="9wH-ek-zD1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uvx-33-Bo1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sdK-BG-yEK" secondAttribute="bottom" constant="50" id="wQp-hU-XSW"/>
+                            <constraint firstItem="Yd9-Cs-IfR" firstAttribute="bottom" secondItem="sdK-BG-yEK" secondAttribute="bottom" constant="30" id="wQp-hU-XSW"/>
                             <constraint firstItem="PL4-s6-j2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y5N-3c-LYC"/>
-                            <constraint firstItem="9wH-ek-zD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zjm-r4-VmY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Добавьте город" id="Ab5-iR-XSC">
@@ -245,6 +240,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="PageControl" destination="Yd9-Cs-IfR" id="JVW-5T-jQd"/>
                         <outlet property="currentHumidityLabel" destination="jE1-he-sFX" id="T4j-tF-KVp"/>
                         <outlet property="currentHumidityUIImageView" destination="96t-Ae-JFA" id="fwW-9H-Doj"/>
                         <outlet property="currentPressureLabel" destination="W9u-pr-xV6" id="Nju-aw-TdZ"/>
@@ -460,6 +456,35 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="114.50892857142857"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="9aQ-cB-JFE">
+            <objects>
+                <viewController id="F06-fb-SpP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XLu-uk-UyU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPS-x5-LIu">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <connections>
+                                    <segue destination="6mC-cG-rIv" kind="embed" id="BtA-ne-1ym"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZwY-AH-R9j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zPS-x5-LIu" firstAttribute="top" secondItem="XLu-uk-UyU" secondAttribute="topMargin" id="0oq-rd-468"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="zPS-x5-LIu" secondAttribute="bottom" id="BOh-iv-nA7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zPS-x5-LIu" secondAttribute="trailing" id="a1H-I2-SUh"/>
+                            <constraint firstItem="zPS-x5-LIu" firstAttribute="leading" secondItem="XLu-uk-UyU" secondAttribute="leadingMargin" id="xGK-Gv-Jqg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lt4-WW-Rkr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142" y="907"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="iHH-vN-QzG">
             <objects>
@@ -486,7 +511,8 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ZBH-d6-cIX" customClass="PageViewController" customModule="Weather1" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LQP-pd-THt">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ZJM-Pf-l7t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZJM-Pf-l7t">
+                            <color key="tintColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="B6M-lf-861" kind="presentation" id="Xpa-QV-q3U"/>
                             </connections>
@@ -505,6 +531,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R7R-n3-Bpr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -515,14 +543,32 @@
             </objects>
             <point key="canvasLocation" x="-807.24637681159425" y="114.50892857142857"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="1D2-wK-N7c">
+            <objects>
+                <viewController id="6mC-cG-rIv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wrl-Zr-VWg">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="818"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hEn-GS-676"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddp-6g-BJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="897"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cdm-wL-dU0"/>
+        <segue reference="Xpa-QV-q3U"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="humidity" width="128" height="128"/>
         <image name="iconfinder_Thermometer_6802270 (1)" width="128" height="128"/>
         <image name="wind" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

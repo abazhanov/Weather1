@@ -41,106 +41,79 @@ class MainViewController: UIViewController {
     @IBOutlet weak var forecast5DaysNameLabel4: UILabel!
     @IBOutlet weak var forecast5DaysNameLabel5: UILabel!
     
+    @IBOutlet weak var PageControl: UIPageControl!
     
-    var cities: [String] = []
+    //var cities: [String] = []
     
     var citiesFromPageView: String!
-    var index: Int = 0
-
+    var indexOfCurrentCity = 0
+    var numberOfCities = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Main - город: \(citiesFromPageView)")
-//        title = citiesFromPageView
-//        cities = StorageManager.shared.getCities()
+        PageControl.numberOfPages = numberOfCities
+        PageControl.currentPage = indexOfCurrentCity
         
-        //print("cities: ", cities)
-     
-//        if cities == [] {
-//            cities.append("Нижний Новгород")
-//            StorageManager.shared.addCity(city: "Нижний Новгород")
-//        }
+        
+        //print("Main - город: \(citiesFromPageView)")
+
         showCurrentWeather(for: citiesFromPageView)
-//        print()
-//        print()
-//        print()
-//        print()
-//        print()
-//        //showForecast5Days(for: cities.first ?? "Москва")
-//        print()
-//        print()
-//        print()
-//        print()
-//        print()
         showForecast16Days(for: citiesFromPageView)
         
         
-        //Вот тут тренировка
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .medium
-//         
-//        let date = Date(timeIntervalSinceReferenceDate: 1620680400)
-//        let a = Date(timeIntervalSince1970: 1620680400)
-//         
-//        dateFormatter.locale = Locale(identifier: "ru_RU")
-//        dateFormatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd HH:mm:ss")
-//        
-//        print(dateFormatter.string(from: date)) // Jan 2, 2001
-//        print(dateFormatter.string(from: a)) // Jan 2, 2001
-        
     }
     
-    @IBAction func leftCityButtonPressed() {
-        let currentCity = title
-        var indexOfCity = 0
-        var leftIndexOfCity: Int
-        //print("cities.count", cities.count)
-        for index in 0...cities.count - 1 {
-            if cities[index] == currentCity {
-                indexOfCity = index
-            }
-        }
-        //print("index: ", indexOfCity)
-        if indexOfCity == 0 {
-            leftIndexOfCity = cities.count - 1
-        } else {
-            leftIndexOfCity = indexOfCity - 1
-        }
-        
-        showCurrentWeather(for: cities[leftIndexOfCity])
-        showForecast16Days(for: cities[leftIndexOfCity])
-    }
-    
-    @IBAction func rightCityButtonPressed() {
-        let currentCity = title
-        var indexOfCity = 0
-        var rightIndexOfCity: Int
-        //print("cities.count", cities.count)
-        for index in 0...cities.count - 1 {
-            if cities[index] == currentCity {
-                indexOfCity = index
-            }
-        }
-        //print("index: ", indexOfCity)
-        if indexOfCity == cities.count - 1 {
-            rightIndexOfCity = 0
-        } else {
-            rightIndexOfCity = indexOfCity + 1
-        }
-        
-        showCurrentWeather(for: cities[rightIndexOfCity])
-        showForecast16Days(for: cities[rightIndexOfCity])
-    }
+//    @IBAction func leftCityButtonPressed() {
+//        let currentCity = title
+//        var indexOfCity = 0
+//        var leftIndexOfCity: Int
+//        //print("cities.count", cities.count)
+//        for index in 0...cities.count - 1 {
+//            if cities[index] == currentCity {
+//                indexOfCity = index
+//            }
+//        }
+//        //print("index: ", indexOfCity)
+//        if indexOfCity == 0 {
+//            leftIndexOfCity = cities.count - 1
+//        } else {
+//            leftIndexOfCity = indexOfCity - 1
+//        }
+//
+//        showCurrentWeather(for: cities[leftIndexOfCity])
+//        showForecast16Days(for: cities[leftIndexOfCity])
+//    }
+//
+//    @IBAction func rightCityButtonPressed() {
+//        let currentCity = title
+//        var indexOfCity = 0
+//        var rightIndexOfCity: Int
+//        //print("cities.count", cities.count)
+//        for index in 0...cities.count - 1 {
+//            if cities[index] == currentCity {
+//                indexOfCity = index
+//            }
+//        }
+//        //print("index: ", indexOfCity)
+//        if indexOfCity == cities.count - 1 {
+//            rightIndexOfCity = 0
+//        } else {
+//            rightIndexOfCity = indexOfCity + 1
+//        }
+//
+//        showCurrentWeather(for: cities[rightIndexOfCity])
+//        showForecast16Days(for: cities[rightIndexOfCity])
+//    }
     
     
 
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navBarVC = segue.destination as? UINavigationController else { return }
-        let cityListVC = navBarVC.topViewController as! CityListTableViewController
-        cityListVC.cities = cities
-        //cityListVC.delegate = self
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let navBarVC = segue.destination as? UINavigationController else { return }
+//        let cityListVC = navBarVC.topViewController as! CityListTableViewController
+//        cityListVC.cities = cities
+//        //cityListVC.delegate = self
+//    }
     
 //    private func getCities() -> [String] {
 //        //let cities = ["Нижний Новгород"]
@@ -307,23 +280,23 @@ class MainViewController: UIViewController {
         // or use capitalized(with: locale) if you want
     }
     
-    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
-        let translation = recognizer.translation(in: view)
-        if let view = recognizer.view {
-            print("Значение свайпа", translation.x)
-            print("Значение state", recognizer.state)
-            if recognizer.state == UIGestureRecognizer.State.ended {
-                print("UIGestureRecognizer.State.ended")
-                if translation.x > 0 {
-                    rightCityButtonPressed()
-                } else {
-                    leftCityButtonPressed()
-                }
-            }
-        } else {
-            print("ЧТО-ТО ПОШЛО НЕ ТАК!")
-        }
-    }
+//    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
+//        let translation = recognizer.translation(in: view)
+//        if let view = recognizer.view {
+//            print("Значение свайпа", translation.x)
+//            print("Значение state", recognizer.state)
+//            if recognizer.state == UIGestureRecognizer.State.ended {
+//                print("UIGestureRecognizer.State.ended")
+//                if translation.x > 0 {
+//                    rightCityButtonPressed()
+//                } else {
+//                    leftCityButtonPressed()
+//                }
+//            }
+//        } else {
+//            print("ЧТО-ТО ПОШЛО НЕ ТАК!")
+//        }
+//    }
     
 }
 
