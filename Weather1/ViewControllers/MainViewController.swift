@@ -49,10 +49,20 @@ class MainViewController: UIViewController {
     var indexOfCurrentCity = 0
     var numberOfCities = 0
     
+    var delegate: MainViewControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         PageControl.numberOfPages = numberOfCities
         PageControl.currentPage = indexOfCurrentCity
+        print("MAIN: citiesFromPageView = \(citiesFromPageView)")
+        
+        guard let titleCity = citiesFromPageView else {
+            return
+        }
+        print("MAIN: titleCity = \(titleCity)")
+        
+        //delegate.updateTitle(city: "SSS")
         
         
         //print("Main - город: \(citiesFromPageView)")
@@ -130,7 +140,7 @@ class MainViewController: UIViewController {
                 //print(currentWeather.weather[0].icon)
                 
                 DispatchQueue.main.async {
-                    self.title = currentWeather.name
+                    //self.title = currentWeather.name
                     self.currentWeatherDescriptionLabel.text = currentWeather.weather[0].description
                     self.currentWeatherTempLabel.text = String(lroundf(currentWeather.main.temp)) + " ºC"
                     
